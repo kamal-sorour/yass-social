@@ -235,14 +235,6 @@ export default function Login() {
                       {errors.password.message}
                     </p>
                   )}
-                  <div className="flex justify-end pt-1">
-                    <Link
-                      to="/reset-password"
-                      className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors"
-                    >
-                      Forgot password?
-                    </Link>
-                  </div>
                 </div>
 
                 <div className="pt-4">
