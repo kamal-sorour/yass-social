@@ -227,7 +227,7 @@ export default function Profile() {
                               : "bg-indigo-600 text-white hover:bg-indigo-700 hover:shadow-lg hover:shadow-indigo-500/25"
                           }`}
                         >
-                          {isFollowing ? "UnFollow" : "Follow"}
+                          {isFollowing ? "Un Follow" : "Follow"}
                         </button>
                       </>
                     )}
