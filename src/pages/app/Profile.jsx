@@ -227,10 +227,7 @@ export default function Profile() {
                               : "bg-indigo-600 text-white hover:bg-indigo-700 hover:shadow-lg hover:shadow-indigo-500/25"
                           }`}
                         >
-                          {isFollowing ? "Following" : "Follow"}
-                        </button>
-                        <button className="px-6 py-2.5 rounded-xl border border-neutral-200 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 font-semibold hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors">
-                          Message
+                          {isFollowing ? "UnFollow" : "Follow"}
                         </button>
                       </>
                     )}
