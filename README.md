@@ -161,14 +161,7 @@ Follow these steps to reliably set up the project locally:
    npm install
    ```
 
-3. **Configure Environment Variables**
-   Create a `.env` file mapping required secrets and the backend API path.
-
-   ```env
-   VITE_API_BASE_URL="http://localhost:5000/api/v1"
-   ```
-
-4. **Launch the development server**
+3. **Launch the development server**
    ```bash
    npm run dev
    ```
@@ -245,3 +238,4 @@ Built with precision, modern web standards, and high-performance design principl
 [x] ✅ GET Get Unread Count  
 [x] ✅ PATCH Mark Notification As Read  
 [x] ✅ PATCH Mark All As Read
+
