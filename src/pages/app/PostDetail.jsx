@@ -13,6 +13,7 @@ import {
   useToggleLikeComment,
 } from "../../hooks/useComments";
 import { useAuthContext } from "../../hooks/useAuth";
+import { PostCardSkeleton } from "../../components/SkeletonLoading";
 
 const ReplyItem = ({ reply, postId }) => {
   const { user: currentUser } = useAuthContext();
@@ -784,7 +785,7 @@ export default function PostDetail() {
   const comments = commentsData?.data?.comments || [];
 
   if (isPostLoading)
-    return <div className="text-center py-10">Loading post...</div>;
+    return <PostCardSkeleton />;
   if (!post)
     return (
       <div className="max-w-2xl mx-auto px-4 py-8 text-center text-neutral-600 dark:text-neutral-400">
