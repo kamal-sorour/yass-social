@@ -18,6 +18,7 @@ import ProtectedRoute from './components/guards/ProtectedRoute';
 import GuestRoute from './components/guards/GuestRoute';
 import Community from './pages/app/Community';
 import MyPosts from './pages/app/MyPosts';
+import OfflineWrapper from './components/OfflineWrapper';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -97,6 +98,7 @@ function App() {
       <AuthProvider>
         <Toaster />
         <RouterProvider router={router} />
+        <OfflineWrapper />
       </AuthProvider>
     </QueryClientProvider>
   );

@@ -30,6 +30,7 @@ Yass is a modern, production-ready social networking platform designed to connec
 - **Real-Time Notifications:** Centralized notification hub for interactions, equipped with read/unread tracking and batch actions.
 - **Responsive UI & Dark Mode:** Fluidly adapts to all screen sizes utilizing customized Tailwind CSS, complete with manual/system visual theming.
 - **High-Performance State Management:** Optimized data fetching, offline caching, and optimistic UI updates driven by React Query.
+- **Network Resilience:** Real-time offline/online detection ensuring users are instantly informed about their network status gracefully using `react-detect-offline`.
 - **Interactive Multimedia Form:** Elegant input workflows including a dynamic emoji picker and smooth declarative animations via Framer Motion.
 
 ## 🏗 Architecture
@@ -58,6 +59,7 @@ The project follows a clean, highly modular React architecture to ensure scalabi
 
 - TanStack React Query `^5.90.21`
 - Axios `^1.13.6`
+- React Detect Offline `^2.4.5`
 
 **Styling & UI Interactivity**
 
@@ -238,4 +240,3 @@ Built with precision, modern web standards, and high-performance design principl
 [x] ✅ GET Get Unread Count  
 [x] ✅ PATCH Mark Notification As Read  
 [x] ✅ PATCH Mark All As Read
-

@@ -14,42 +14,44 @@ export default function MyPosts() {
   const posts = data?.data?.posts || [];
 
   return (
-    <div className="max-w-2xl mx-auto px-4 py-6 lg:px-8 pb-20">
-      <motion.div
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="mb-8 bg-white dark:bg-neutral-900 p-6 rounded-3xl border border-neutral-100 dark:border-neutral-800 shadow-sm flex items-center justify-between"
-      >
-        <div className="flex items-center gap-4">
-          <div className="p-3 bg-indigo-50 dark:bg-indigo-500/10 rounded-xl text-indigo-600 dark:text-indigo-400">
-            <svg
-              className="w-8 h-8"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={1.5}
-                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
-              />
-            </svg>
-          </div>
-          <div>
-            <h1 className="text-2xl font-bold text-neutral-900 dark:text-white">
-              My Posts
-            </h1>
-            <p className="text-neutral-500 dark:text-neutral-400 mt-1 text-sm">
-              Manage your timeline and share your thoughts.
-            </p>
-          </div>
-        </div>
-      </motion.div>
+    <div className="max-w-7xl mx-auto px-4 py-6 lg:px-8 flex gap-8 justify-center items-start pb-20">
 
-      <CreatePost />
 
-      <div className="mt-8 space-y-6">
+      <div className="flex-1 max-w-2xl w-full">
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mb-8 bg-white dark:bg-neutral-900 p-6 rounded-3xl border border-neutral-100 dark:border-neutral-800 shadow-sm flex items-center justify-between"
+        >
+          <div className="flex items-center gap-4">
+            <div className="p-3 bg-indigo-50 dark:bg-indigo-500/10 rounded-xl text-indigo-600 dark:text-indigo-400">
+              <svg
+                className="w-8 h-8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1.5}
+                  d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                />
+              </svg>
+            </div>
+            <div>
+              <h1 className="text-2xl font-bold text-neutral-900 dark:text-white">
+                My Posts
+              </h1>
+              <p className="text-neutral-500 dark:text-neutral-400 mt-1 text-sm">
+                Manage your timeline and share your thoughts.
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
+        <CreatePost />
+        
         {isLoading ? (
           [...Array(3)].map((_, i) => <PostCardSkeleton key={i} />)
         ) : isError ? (
@@ -110,7 +112,7 @@ export default function MyPosts() {
           posts.map((post) => <PostCard key={post._id} post={post} />)
         )}
       </div>
-      <div className="lg:block w-85 shrink-0 sticky top-24">
+      <div className="hidden lg:block w-85 shrink-0 sticky top-24">
         <SuggestedFriends />
       </div>
     </div>
