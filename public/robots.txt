@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /notifications
+Disallow: /settings
+Disallow: /private
+
+Sitemap: https://yass-route.netlify.app/sitemap.xml
