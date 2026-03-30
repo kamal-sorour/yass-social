@@ -38,3 +38,16 @@
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(20px);
 }
+
+body::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #06ffe6, #4bec8e );
+  border-radius: 8px;
+  
+}
