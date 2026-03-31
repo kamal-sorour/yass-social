@@ -13,7 +13,7 @@ import {
   useToggleLikeComment,
 } from "../../hooks/useComments";
 import { useAuthContext } from "../../hooks/useAuth";
-import { PostCardSkeleton } from "../../components/SkeletonLoading";
+import { SEO } from "../../components/SEO";
 
 const ReplyItem = ({ reply, postId }) => {
   const { user: currentUser } = useAuthContext();
@@ -785,7 +785,7 @@ export default function PostDetail() {
   const comments = commentsData?.data?.comments || [];
 
   if (isPostLoading)
-    return <PostCardSkeleton />;
+    return <div className="text-center py-10">Loading post...</div>;
   if (!post)
     return (
       <div className="max-w-2xl mx-auto px-4 py-8 text-center text-neutral-600 dark:text-neutral-400">
@@ -802,8 +802,16 @@ export default function PostDetail() {
     );
 
   return (
-    <div className="max-w-2xl mx-auto px-4 py-6 lg:px-8 pb-20">
-      <button
+    <>
+      <SEO 
+        title={post.content ? `${post.content.substring(0, 50)}...` : `Post on Yass Route`}
+        description={post.content || "View this post and join the conversation on Yass Route."}
+        image={post.image}
+        url={`/app/post/${post._id}`}
+        type="article"
+      />
+      <div className="max-w-2xl mx-auto px-4 py-6 lg:px-8 pb-20">
+        <button
         onClick={() => navigate(-1)}
         className="mb-6 flex items-center gap-2 text-neutral-600 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white transition-colors"
       >
@@ -850,5 +858,6 @@ export default function PostDetail() {
         )}
       </div>
     </div>
+    </>
   );
 }

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Logo from '../components/Logo';
 import Button from '../components/Button';
+import { SEO } from '../components/SEO';
 
 export default function NotFound() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -13,7 +14,13 @@ export default function NotFound() {
   }, []);
 
   return (
-    <div className="min-h-screen relative flex flex-col items-center justify-center overflow-hidden bg-neutral-50 dark:bg-neutral-950 px-4 sm:px-6">
+    <>
+      <SEO 
+        title="Page Not Found"
+        description="The page you're looking for doesn't exist or has been moved."
+        noindex={true}
+      />
+      <div className="min-h-screen relative flex flex-col items-center justify-center overflow-hidden bg-neutral-50 dark:bg-neutral-950 px-4 sm:px-6">
       
       <div className="absolute inset-0 pointer-events-none z-0">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px]" />
@@ -113,5 +120,6 @@ export default function NotFound() {
         </div>
       </motion.div>
     </div>
+    </>
   );
 }

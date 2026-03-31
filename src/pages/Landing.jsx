@@ -5,6 +5,7 @@ import Button from "../components/Button";
 import Footer from "../components/Footer";
 import ThemeToggle from "../components/ThemeToggle";
 import Kimo from "../assets/kimo.jpg";
+import { SEO } from "../components/SEO";
 
 const features = [
   {
@@ -186,6 +187,13 @@ export default function Landing() {
 
   return (
     <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950">
+      <SEO 
+        title="Welcome"
+        description="Join Yass Route today. The ultimate community to explore trends, share amazing moments, and connect with people globally."
+        keywords="social media, Yass Route, connect globally, share photos, social networking"
+        url="/"
+        type="website"
+      />
       <div className="fixed top-0 inset-x-0 z-50 flex justify-center px-4 pt-4 sm:pt-6 pointer-events-none">
         <motion.nav
           initial={{ y: -40, opacity: 0, scale: 0.95 }}

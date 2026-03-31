@@ -5,6 +5,7 @@ import {
   useMarkAsRead,
   useMarkAllAsRead,
 } from "../../hooks/useNotifications";
+import { SEO } from "../../components/SEO";
 
 const typeIcons = {
   like_post: (
@@ -75,8 +76,15 @@ export default function Notifications() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto px-4 py-6 lg:px-8 pb-24">
-      <motion.div
+    <>
+      <SEO 
+        title="Notifications"
+        description="Check your latest notifications and interactions on Yass Route."
+        url="/app/notifications"
+        noindex={true}
+      />
+      <div className="max-w-2xl mx-auto px-4 py-6 lg:px-8 pb-24">
+        <motion.div
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
@@ -210,5 +218,6 @@ export default function Notifications() {
         </div>
       )}
     </div>
+    </>
   );
 }

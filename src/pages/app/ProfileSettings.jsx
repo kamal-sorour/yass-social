@@ -5,6 +5,7 @@ import { useChangePassword } from "../../hooks/useUsers";
 import { useAuthContext } from "../../hooks/useAuth";
 import ThemeToggle from "../../components/ThemeToggle";
 import { motion } from "framer-motion";
+import { SEO } from "../../components/SEO";
 
 const Input = ({ label, error, ...props }) => (
   <div className="flex flex-col gap-1.5">
@@ -53,8 +54,15 @@ export default function ProfileSettings() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto px-4 py-8 lg:px-8">
-      <h1 className="text-2xl font-bold text-neutral-900 dark:text-white mb-6">
+    <>
+      <SEO 
+        title="Account Settings"
+        description="Manage your Yass Route account settings, security, and appearance."
+        url="/app/profile/settings"
+        noindex={true}
+      />
+      <div className="max-w-2xl mx-auto px-4 py-8 lg:px-8">
+        <h1 className="text-2xl font-bold text-neutral-900 dark:text-white mb-6">
         Settings
       </h1>
 
@@ -146,5 +154,6 @@ export default function ProfileSettings() {
         </div>
       </motion.section>
     </div>
+    </>
   );
 }

@@ -32,6 +32,7 @@ Yass is a modern, production-ready social networking platform designed to connec
 - **High-Performance State Management:** Optimized data fetching, offline caching, and optimistic UI updates driven by React Query.
 - **Network Resilience:** Real-time offline/online detection ensuring users are instantly informed about their network status gracefully using `react-detect-offline`.
 - **Interactive Multimedia Form:** Elegant input workflows including a dynamic emoji picker and smooth declarative animations via Framer Motion.
+- **Dynamic SEO Management:** Fully integrated React Helmet Async for generating rich metadata, custom titles, and Open Graph tags per route to ensure perfect social integration and search engine indexing.
 
 ## 🏗 Architecture
 
@@ -54,6 +55,7 @@ The project follows a clean, highly modular React architecture to ensure scalabi
 
 - React `^19.2.0`
 - React Router DOM `^7.13.1`
+- React Helmet Async `^3.0.0`
 
 **State Management & Data Fetching**
 
@@ -90,6 +92,7 @@ src/
  │   ├─ Footer.jsx          # Default page footer for static paths.
  │   ├─ Input.jsx           # Global form input field component.
  │   ├─ Logo.jsx            # Brand identity renderer.
+ │   ├─ SEO.jsx             # Dynamic Document Head manager for Open Graph, SEO titles, and robot indexing rules.
  │   ├─ SkeletonLoading.jsx # UI shimmering placeholder before data fetches.
  │   └─ ThemeToggle.jsx     # Actionable switch for dark/light mode switching.
  ├─ context/                # High-level context providers dictating global application states.
@@ -153,7 +156,7 @@ Follow these steps to reliably set up the project locally:
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/kamal-sorour/yass-social.git
+   git clone [https://github.com/kamal-sorour/yass-social.git](https://github.com/kamal-sorour/yass-social.git)
    cd social-app
    ```
 
@@ -198,7 +201,7 @@ Built with precision, modern web standards, and high-performance design principl
 
 ## 📡 API Completion Status
 
-📁 1. Users & Auth 
+📁 1. Users & Auth
 
 [x] ✅ POST Signup  
 [x] ✅ POST Signin  
@@ -211,7 +214,7 @@ Built with precision, modern web standards, and high-performance design principl
 [x] ✅ PUT Follow/Unfollow User  
 [x] ✅ GET Get User Posts (Nested)
 
-📁 2. Posts 
+📁 2. Posts
 
 [x] ✅ GET Get All Posts  
 [x] ✅ GET Get Home Feed  
@@ -224,7 +227,7 @@ Built with precision, modern web standards, and high-performance design principl
 [x] ✅ PUT Bookmark/Unbookmark Post  
 [x] ✅ POST Share Post
 
-📁 3. Comments & Replies 
+📁 3. Comments & Replies
 
 [x] ✅ GET Get Post Comments  
 [x] ✅ POST Create Comment  
@@ -234,7 +237,7 @@ Built with precision, modern web standards, and high-performance design principl
 [x] ✅ DEL Delete Comment  
 [x] ✅ PUT Like/Unlike Comment
 
-📁 4. Notifications 
+📁 4. Notifications
 
 [x] ✅ GET Get Notifications  
 [x] ✅ GET Get Unread Count  

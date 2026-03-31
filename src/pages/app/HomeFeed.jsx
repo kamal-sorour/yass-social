@@ -4,14 +4,22 @@ import PostCard from "../../components/feed/PostCard";
 import SuggestedFriends from "../../components/feed/SuggestedFriends";
 import { useHomeFeed } from "../../hooks/usePosts";
 import { PostCardSkeleton } from "../../components/SkeletonLoading";
+import { SEO } from "../../components/SEO";
 
 export default function HomeFeed() {
   const { data, isLoading, isError } = useHomeFeed(1);
   const posts = data?.data?.posts || [];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-6 lg:px-8 flex gap-8 justify-center items-start pb-20">
-      <div className="flex-1 max-w-2xl w-full">
+    <>
+      <SEO 
+        title="Home Feed"
+        description="See what your friends are up to, discover new trends, and share your own moments on Yass Route."
+        url="/app"
+        type="website"
+      />
+      <div className="max-w-7xl mx-auto px-4 py-6 lg:px-8 flex gap-8 justify-center items-start pb-20">
+        <div className="flex-1 max-w-2xl w-full">
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -57,5 +65,6 @@ export default function HomeFeed() {
         <SuggestedFriends />
       </div>
     </div>
+    </>
   );
 }

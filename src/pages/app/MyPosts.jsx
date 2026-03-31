@@ -5,6 +5,7 @@ import { useUserPosts } from "../../hooks/useUsers";
 import { useAuthContext } from "../../hooks/useAuth";
 import { PostCardSkeleton } from "../../components/SkeletonLoading";
 import SuggestedFriends from "../../components/feed/SuggestedFriends";
+import { SEO } from "../../components/SEO";
 
 export default function MyPosts() {
   const { user } = useAuthContext();
@@ -14,7 +15,14 @@ export default function MyPosts() {
   const posts = data?.data?.posts || [];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-6 lg:px-8 flex gap-8 justify-center items-start pb-20">
+    <>
+      <SEO 
+        title="My Posts"
+        description="Manage your timeline and view all your posts on Yass Route."
+        url="/app/myposts"
+        noindex={true}
+      />
+      <div className="max-w-7xl mx-auto px-4 py-6 lg:px-8 flex gap-8 justify-center items-start pb-20">
 
 
       <div className="flex-1 max-w-2xl w-full">
@@ -116,5 +124,6 @@ export default function MyPosts() {
         <SuggestedFriends />
       </div>
     </div>
+    </>
   );
 }

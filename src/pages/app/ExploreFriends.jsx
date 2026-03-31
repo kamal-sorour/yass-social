@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useSuggestions, useToggleFollow } from "../../hooks/useUsers";
 import { ExploreFriendSkeleton } from "../../components/SkeletonLoading";
+import { SEO } from "../../components/SEO";
 
 export default function ExploreFriends() {
   const [search, setSearch] = useState("");
@@ -50,8 +51,15 @@ export default function ExploreFriends() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-8 lg:px-8 pb-20">
-      <div className="flex items-center justify-between mb-6">
+    <>
+      <SEO 
+        title="Suggested Friends"
+        description="Find and connect with new creators, friends, and popular users on Yass Route."
+        url="/app/suggestions"
+        type="website"
+      />
+      <div className="max-w-6xl mx-auto px-4 py-8 lg:px-8 pb-20">
+        <div className="flex items-center justify-between mb-6">
         <h1 className="text-2xl font-bold text-neutral-900 dark:text-white flex items-center gap-2">
           <svg
             className="w-6 h-6 text-blue-600"
@@ -207,5 +215,6 @@ export default function ExploreFriends() {
             })}
       </div>
     </div>
+    </>
   );
 }

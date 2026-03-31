@@ -11,6 +11,7 @@ import {
 } from "../../hooks/useUsers";
 import PostCard from "../../components/feed/PostCard";
 import { PostCardSkeleton } from "../../components/SkeletonLoading";
+import { SEO } from "../../components/SEO";
 
 export default function Profile() {
   const { id } = useParams();
@@ -109,8 +110,16 @@ export default function Profile() {
   }
 
   return (
-    <div className="max-w-4xl mx-auto pb-20">
-      <motion.div
+    <>
+      <SEO 
+        title={`${profileUser.name} (@${profileUser.username || profileUser.name})`}
+        description={profileUser.bio || `Check out ${profileUser.name}'s profile on Yass Route to see their latest posts and updates.`}
+        image={profileUser.photo || profileUser.cover}
+        url={`/app/profile/${profileUser._id}`}
+        type="profile"
+      />
+      <div className="max-w-4xl mx-auto pb-20">
+        <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="relative"
@@ -227,7 +236,10 @@ export default function Profile() {
                               : "bg-indigo-600 text-white hover:bg-indigo-700 hover:shadow-lg hover:shadow-indigo-500/25"
                           }`}
                         >
-                          {isFollowing ? "Un Follow" : "Follow"}
+                          {isFollowing ? "Following" : "Follow"}
+                        </button>
+                        <button className="px-6 py-2.5 rounded-xl border border-neutral-200 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 font-semibold hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors">
+                          Message
                         </button>
                       </>
                     )}
@@ -287,5 +299,6 @@ export default function Profile() {
         )}
       </div>
     </div>
+    </>
   );
 }

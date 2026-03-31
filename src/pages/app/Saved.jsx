@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import PostCard from '../../components/feed/PostCard';
 import { useBookmarks } from '../../hooks/useUsers';
+import { SEO } from "../../components/SEO";
 
 export default function Saved() {
   const { data, isLoading, isError } = useBookmarks();
@@ -8,7 +9,14 @@ export default function Saved() {
   const savedPosts = data?.data?.bookmarks || [];
 
   return (
-    <div className="max-w-2xl mx-auto px-4 py-6 lg:px-8 pb-20">
+    <>
+      <SEO 
+        title="Saved Posts"
+        description="View your saved and bookmarked posts on Yass Route."
+        url="/app/saved"
+        noindex={true}
+      />
+      <div className="max-w-2xl mx-auto px-4 py-6 lg:px-8 pb-20">
       <motion.div
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
@@ -61,5 +69,6 @@ export default function Saved() {
         </motion.div>
       )}
     </div>
+    </>
   );
 }

@@ -4,14 +4,22 @@ import SuggestedFriends from "../../components/feed/SuggestedFriends";
 import { usePosts } from "../../hooks/usePosts";
 import { PostCardSkeleton } from "../../components/SkeletonLoading";
 import CreatePost from "../../components/feed/CreatePost";
+import { SEO } from "../../components/SEO";
 
 export default function Community() {
   const { data, isLoading, isError } = usePosts(1);
   const posts = data?.data?.posts || [];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-6 lg:px-8 flex gap-8 justify-center items-start pb-20">
-      <div className="flex-1 max-w-2xl w-full">
+    <>
+      <SEO 
+        title="Community"
+        description="Discover trending posts and explore the Yass Route community."
+        url="/app/community"
+        type="website"
+      />
+      <div className="max-w-7xl mx-auto px-4 py-6 lg:px-8 flex gap-8 justify-center items-start pb-20">
+        <div className="flex-1 max-w-2xl w-full">
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -102,5 +110,6 @@ export default function Community() {
         <SuggestedFriends />
       </div>
     </div>
+    </>
   );
 }

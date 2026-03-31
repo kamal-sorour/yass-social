@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useMutation } from "@tanstack/react-query";
+import { SEO } from "../../components/SEO";
 
 export default function Signup() {
   const navigate = useNavigate();
@@ -61,6 +62,13 @@ export default function Signup() {
 
   return (
     <>
+      <SEO 
+        title="Sign Up"
+        description="Create your Yass Route account today. Join thousands of creators shaping the future of social media."
+        keywords="Yass Route signup, create account, join social media, new user"
+        url="/signup"
+        type="website"
+      />
       <div className="fixed top-0 inset-x-0 z-50 flex justify-center px-4 pt-4 sm:pt-6 pointer-events-none">
         <motion.nav
           initial={{ y: -40, opacity: 0, scale: 0.95 }}
