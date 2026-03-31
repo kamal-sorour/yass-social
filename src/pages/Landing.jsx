@@ -292,7 +292,7 @@ export default function Landing() {
                     Join the Movement
                   </Button>
                 </Link>
-                <Link to="/explore">
+                <Link to="/app">
                   <Button
                     variant="secondary"
                     size="lg"
