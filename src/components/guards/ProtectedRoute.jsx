@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import { useAuthContext } from '../../hooks/useAuth';
 
 const ProtectedRoute = ({ children }) => {
-  const token = localStorage.getItem('token');
+  const { token } = useAuthContext();
   const navigate = useNavigate();
 
   useEffect(() => {
