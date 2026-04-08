@@ -27,6 +27,13 @@ export const uploadProfilePhoto = async (formData) => {
   return response.data;
 };
 
+export const uploadProfileCover = async (formData) => {
+  const response = await api.put('/users/upload-cover'), formData, {
+    headers: { 'Content-Type': 'multipart/form-data' },
+  });
+  return response.data;
+};
+
 export const getBookmarks = async () => {
   const response = await api.get('/users/bookmarks');
   return response.data;
