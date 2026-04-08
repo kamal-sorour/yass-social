@@ -5,6 +5,7 @@ import {
   getUserPosts,
   toggleFollowUser,
   uploadProfilePhoto,
+  uploadProfileCover,
   getBookmarks,
   changePassword,
   getSuggestions,
@@ -56,6 +57,18 @@ export const useUploadPhoto = () => {
       queryClient.invalidateQueries({ queryKey: ["myProfile"] });
     },
     onError: () => toast.error("Failed to upload photo"),
+  });
+};  
+
+export const useUploadCover = () => {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: uploadProfileCover,
+    onSuccess: () => {
+      toast.success("Profile cover updated successfully!");
+      queryClient.invalidateQueries({ queryKey: ["myProfile"] });
+    },
+    onError: () => toast.error("Failed to upload cover"),
   });
 };
 
